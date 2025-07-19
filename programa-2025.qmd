@@ -1,0 +1,119 @@
+---
+title: "🌟 Taller: Visualización de datos con R y ggplot2"
+subtitle: "Programa del curso"
+author: "[Nombre del instructor]"
+date: today
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-location: left
+    number-sections: true
+    highlight-style: github
+    css: styles.css
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+    fontsize: 11pt
+    linestretch: 1.2
+---
+
+## Información General
+
+**Duración:** 3 encuentros de 2 h cada uno
+
+**Modalidad:** teórico-práctica con ejercicios breves en clase
+
+**Nivel:** personas con conocimientos básicos de R y tidyverse
+
+**Formato del código:** R script + RMarkdown
+
+**Datos:** Casos del ámbito de Ciencias Sociales + dataset general
+
+## 🧭 Objetivos del taller
+
+* Comprender los principios fundamentales de la visualización de datos.
+* Aprender a construir gráficos efectivos, limpios y reproducibles usando `{ggplot2}`.
+* Conocer estrategias para mejorar la estética de los gráficos con un enfoque de diseño.
+* Incorporar herramientas para generar gráficos interactivos y anotados.
+* Practicar con datos reales y aplicar lo aprendido en visualizaciones propias.
+
+## 📚 Encuentro 1 — Fundamentos de visualización con ggplot2
+
+*Inspirado en The Carpentries + Jenny Bryan*
+
+### Contenidos
+
+* **¿Por qué visualizar?** El rol de la visualización en el análisis y la comunicación.
+* **Gramática de los gráficos:** *data + aesthetics + geoms*
+* **Primeros pasos con `{ggplot2}`:**
+  * `ggplot(data, aes(x, y)) + geom_*()`
+  * Gráficos de barras, puntos y líneas
+* **Variables categóricas y continuas**
+* **Mapeo vs. fijación de atributos** (color, size, fill)
+* **Temas y escalas básicas**
+* **Introducción al estilo de `{theme_minimal()}`** y compañía
+
+### Ejercicio práctico
+
+* Crear 3 visualizaciones diferentes con el mismo dataset (una de barras, una de líneas, una de puntos).
+* Explorar distintas combinaciones estéticas y geoms.
+
+## 📚 Encuentro 2 — Personalización, diseño y estética
+
+*Inspirado en Cédric Scherer + Thomas Lin Pedersen*
+
+### Contenidos
+
+* **Tipos de variables y tipos de gráficos:** elegir la mejor opción.
+* **Personalización visual:**
+  * `labs()`, `theme()`, `scale_*_*()` para controlar títulos, colores, tamaños.
+  * Paletas con `{RColorBrewer}`, `scale_fill_manual()`, accesibilidad.
+* **Organización espacial:** `facet_wrap()` y `facet_grid()`
+* **Buenas prácticas de diseño visual:**
+  * Contraste, jerarquía, alineación, balance visual.
+  * Evitar "chartjunk".
+  * Publicación: proporciones, tamaños, fuentes.
+* **Introducción a `patchwork`** para combinar gráficos.
+
+### Ejercicio práctico
+
+* Reproducir una visualización compleja de ejemplo y mejorarla gráficamente.
+* Aplicar principios de diseño gráfico a una visualización propia.
+
+## 📚 Encuentro 3 — Anotaciones, interactividad y publicación
+
+*Inspirado en Thomas Lin Pedersen + Cedric Scherer + recursos avanzados*
+
+### Contenidos
+
+* **Anotaciones inteligentes:**
+  * `annotate()`, `geom_text()` y `geom_label()`
+  * Uso de `{ggannotate}` para crear anotaciones visuales exportables a código
+* **Exportación y formatos:** `ggsave()`, tamaños, DPI, proporciones.
+* **Exportación de gráficos interactivos:**
+  * `ggplotly()` y nociones básicas de `{plotly}`
+* **Principios para comunicar visualmente:**
+  * Narrativas visuales, títulos efectivos, destacar insights.
+* **Recursos para seguir aprendiendo:**
+  * Thomas Lin Pedersen's "Tidy Visualization" workshop
+  * Cédric Scherer's publicaciones y plantillas
+
+### Ejercicio práctico
+
+* Anotar y exportar una visualización diseñada por el/la estudiante.
+* Compartirla en formato interactivo o listo para publicación.
+
+## 🧰 Herramientas y paquetes utilizados
+
+* `{ggplot2}`
+* `{tidyverse}`
+* `{ggannotate}`
+* `{plotly}`
+* `{patchwork}`
+* `{RColorBrewer}` / `{viridis}`
+* `{ggtext}` / `{scales}` (introducción opcional)
+
+---
+
+*Este programa puede ser ajustado según las necesidades específicas del grupo y el tiempo disponible.*

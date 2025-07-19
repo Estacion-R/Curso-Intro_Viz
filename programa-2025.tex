@@ -1,0 +1,369 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  11pt,
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+    \setmainfont[]{Ubuntu}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Taller: Visualización de datos con R y ggplot2},
+  pdfauthor={Estación R},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Taller: Visualización de datos con R y ggplot2}
+\author{Estación R}
+\date{2025-07-01}
+
+\begin{document}
+\maketitle
+
+
+\section{Programa del Taller}\label{programa-del-taller}
+
+\textbf{Duración total:} 3 encuentros de 2 h cada uno\\
+\textbf{Modalidad:} Teórico-práctica\\
+\textbf{Nivel:} Personas con conocimientos básicos de R y tidyverse\\
+\textbf{Formato del código:} R script y RMarkdown\\
+\textbf{Datos utilizados:} Casos reales en Ciencias Sociales + datasets
+generales
+
+\subsection{Objetivos}\label{objetivos}
+
+\begin{itemize}
+\tightlist
+\item
+  Comprender los principios fundamentales de la visualización de datos.
+\item
+  Aprender a construir gráficos efectivos, reproducibles y estéticos
+  usando \texttt{\{ggplot2\}}.
+\item
+  Conocer estrategias para mejorar la estética y el diseño gráfico.
+\item
+  Incorporar herramientas para generar gráficos interactivos y anotados.
+\item
+  Practicar con datos reales y aplicar lo aprendido en visualizaciones
+  propias.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Encuentro 1 --- Fundamentos de visualización con
+ggplot2}\label{encuentro-1-fundamentos-de-visualizaciuxf3n-con-ggplot2}
+
+Inspirado en \emph{The Carpentries} y \emph{Jenny Bryan}
+
+\textbf{Contenidos:}
+
+\begin{itemize}
+\tightlist
+\item
+  Introducción a la visualización como herramienta de análisis y
+  comunicación.
+\item
+  Gramática de los gráficos: \texttt{data\ +\ aesthetics\ +\ geoms}
+\item
+  Primeros pasos con \texttt{\{ggplot2\}}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{ggplot(data,\ aes(x,\ y))\ +\ geom\_*()}
+  \item
+    Gráficos de barras, puntos y líneas
+  \end{itemize}
+\item
+  Tipos de variables (categóricas vs.~continuas)
+\item
+  Mapeo estético vs.~valores fijos
+\item
+  Temas y escalas básicas
+\item
+  Uso de \texttt{theme\_minimal()} y temas predefinidos
+\end{itemize}
+
+\textbf{Ejercicio práctico:}
+
+\begin{itemize}
+\tightlist
+\item
+  Crear 3 visualizaciones distintas con un mismo dataset (barra, línea,
+  puntos).
+\item
+  Aplicar combinaciones básicas de \texttt{aes()} y \texttt{geom\_*()}.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Encuentro 2 --- Personalización, diseño y
+estética}\label{encuentro-2-personalizaciuxf3n-diseuxf1o-y-estuxe9tica}
+
+Inspirado en \emph{Cédric Scherer} y \emph{Thomas Lin Pedersen}
+
+\textbf{Contenidos:}
+
+\begin{itemize}
+\tightlist
+\item
+  Elección del tipo de gráfico según el tipo de variable
+\item
+  Personalización visual:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{labs()}, \texttt{theme()}, \texttt{scale\_*\_*()}
+  \item
+    Paletas con \texttt{\{RColorBrewer\}} y
+    \texttt{scale\_fill\_manual()}
+  \end{itemize}
+\item
+  Facetado con \texttt{facet\_wrap()} y \texttt{facet\_grid()}
+\item
+  Principios de diseño gráfico:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Contraste, jerarquía, alineación, claridad
+  \item
+    Proporciones, márgenes, tipografía
+  \end{itemize}
+\item
+  Composición con \texttt{\{patchwork\}} para gráficos múltiples
+\end{itemize}
+
+\textbf{Ejercicio práctico:}
+
+\begin{itemize}
+\tightlist
+\item
+  Reproducir una visualización compleja y mejorar su diseño.
+\item
+  Aplicar principios de diseño visual sobre una visualización propia.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Encuentro 3 --- Anotaciones, interactividad y
+publicación}\label{encuentro-3-anotaciones-interactividad-y-publicaciuxf3n}
+
+Inspirado en \emph{Thomas Lin Pedersen} y \emph{Cédric Scherer}
+
+\textbf{Contenidos:}
+
+\begin{itemize}
+\tightlist
+\item
+  Anotaciones en gráficos:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{annotate()}, \texttt{geom\_text()}, \texttt{geom\_label()}
+  \item
+    Uso de \texttt{\{ggannotate\}} para exportar anotaciones visuales
+  \end{itemize}
+\item
+  Exportación y publicación:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{ggsave()}, DPI, tamaños, proporciones
+  \end{itemize}
+\item
+  Interactividad:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{ggplotly()} para transformar gráficos estáticos en
+    interactivos
+  \end{itemize}
+\item
+  Buenas prácticas para comunicación visual efectiva
+\item
+  Recursos para seguir aprendiendo
+\end{itemize}
+
+\textbf{Ejercicio práctico:}
+
+\begin{itemize}
+\tightlist
+\item
+  Anotar y exportar una visualización propia.
+\item
+  Compartir el resultado en formato interactivo o publicable.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Paquetes principales
+utilizados}\label{paquetes-principales-utilizados}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{\{ggplot2\}}
+\item
+  \texttt{\{tidyverse\}}
+\item
+  \texttt{\{ggannotate\}}
+\item
+  \texttt{\{plotly\}}
+\item
+  \texttt{\{patchwork\}}
+\item
+  \texttt{\{RColorBrewer\}} / \texttt{\{viridis\}}
+\item
+  \texttt{\{ggtext\}} / \texttt{\{scales\}} (según necesidad)
+\end{itemize}
+
+
+
+
+\end{document}
