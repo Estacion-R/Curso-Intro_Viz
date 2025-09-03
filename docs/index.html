@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Materiales — Curso de Visualización con R</title>
+  <meta name="description" content="Hub de enlaces para el curso de Visualización de Datos con R — Estación R" />
+  <!-- Fuente (opcional). Si prefieres evitar recursos externos, elimina esta línea -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --blue:#415CF2; /* Estación R azul */
+      --yellow:#ECF238; /* Estación R amarillo */
+      --black:#191919;
+      --card:#ffffff;
+      --bg:#f7f8ff;
+      --muted:#6b7280;
+      --radius:18px;
+      --shadow: 0 6px 24px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Ubuntu, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;background:var(--bg);color:var(--black)}
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px;margin:0 auto;padding:28px}
+    header{
+      display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:space-between;margin-bottom:20px
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:12px;object-fit:contain;background:#fff;border:1px solid #e5e7eb}
+    h1{font-size:clamp(22px,3vw,34px);margin:0 0 6px 0;line-height:1.15}
+    .subtitle{color:#374151;margin:0;font-size:clamp(14px,2vw,16px)}
+    .cta{
+      display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;border:none;border-radius:999px;padding:10px 16px;font-weight:600;box-shadow:var(--shadow)
+    }
+    .cta:hover{filter:brightness(.96)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}
+    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:4px 0 6px;font-size:18px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .chip{display:inline-block;background:var(--yellow);color:#111827;font-weight:700;border-radius:999px;padding:4px 10px;font-size:12px;margin-bottom:10px}
+    footer{margin-top:28px;color:#6b7280;font-size:13px}
+    .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid #e5e7eb;background:#fff;border-radius:10px;padding:8px 12px;font-weight:600}
+    .btn:hover{background:#f3f4f6}
+    .note{background:#fffbe6;border:1px solid #fde68a;border-radius:12px;padding:10px 12px;font-size:13px;color:#7c6f1b;margin-top:16px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <!-- Cambia la ruta del logo si lo tienes en /img/ -->
+        <img class="logo" src="img/logo-estacion_r.png" alt="Logo Estación R" onerror="this.style.display='none'">
+        <div>
+          <h1>Materiales del Curso • Visualización con R</h1>
+          <p class="subtitle">Enlaces rápidos a presentaciones, datasets, código y más.</p>
+        </div>
+      </div>
+      <a class="cta" href="https://github.com/Estacion-R/Curso---R-Viz" target="_blank" rel="noopener">Ver repositorio</a>
+    </header>
+
+    <section class="grid">
+      <article class="card">
+        <span class="chip">Presentaciones</span>
+        <h3>Slides (Quarto / RevealJS)</h3>
+        <p>Presentaciones usadas en clase.</p>
+        <div class="links">
+          <!-- Reemplaza las URLs por las reales de tu repo -->
+          <a class="btn" href="https://github.com/Estacion-R/Curso---R-Viz/tree/main/slides" target="_blank" rel="noopener">Carpeta de slides</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Clase 1 (HTML)</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Clase 2 (HTML)</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Clase 3 (HTML)</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="chip">Datos</span>
+        <h3>Datasets de práctica</h3>
+        <p>Bases utilizadas en ejercicios y ejemplos.</p>
+        <div class="links">
+          <a class="btn" href="https://github.com/Estacion-R/Curso---R-Viz/tree/main/data" target="_blank" rel="noopener">Carpeta /data</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Descargar dataset principal (.csv)</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="chip">Código</span>
+        <h3>Scripts y notebooks</h3>
+        <p>Ejemplos en R (ggplot2, plotly) y soluciones de prácticas.</p>
+        <div class="links">
+          <a class="btn" href="https://github.com/Estacion-R/Curso---R-Viz/tree/main/code" target="_blank" rel="noopener">Carpeta /code</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Ejemplo ggplot2.R</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Ejemplo plotly.R</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="chip">Comunidad</span>
+        <h3>Comunicación del curso</h3>
+        <p>Canal para dudas, anuncios y materiales complementarios.</p>
+        <div class="links">
+          <a class="btn" href="#" target="_blank" rel="noopener">Slack del curso</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Guía rápida (PDF)</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="chip">Grabaciones</span>
+        <h3>Videos de las clases</h3>
+        <p>Acceso a sesiones grabadas (si aplica).</p>
+        <div class="links">
+          <a class="btn" href="#" target="_blank" rel="noopener">Clase 1 (video)</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Clase 2 (video)</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Clase 3 (video)</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="chip">Otros</span>
+        <h3>Recursos adicionales</h3>
+        <p>Lecturas, referencias de color y buenas prácticas.</p>
+        <div class="links">
+          <a class="btn" href="#" target="_blank" rel="noopener">Guía de paletas (ColorBrewer)</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">Accesibilidad de color</a>
+        </div>
+      </article>
+    </section>
+
+    <div class="note">
+      <strong>Cómo usar:</strong> edita este archivo y reemplaza los enlaces “#” por las URLs reales dentro de tu repositorio (o enlaces públicos a HTML/video). Si usas GitHub Pages, coloca este archivo como <code>docs/index.html</code> en el repo.
+    </div>
+
+    <footer>
+      Estación R • Curso de Visualización con R — <a href="https://github.com/Estacion-R/Curso---R-Viz" target="_blank" rel="noopener">Repositorio</a>
+    </footer>
+  </div>
+</body>
+</html>
